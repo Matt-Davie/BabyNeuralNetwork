@@ -88,10 +88,10 @@ def get_accuracy(predictions, Y):
     return np.sum(predictions == Y)/Y.size
 
 def gradient_descent(X, Y, alpha, iterations):
-    #learning rate alpha of 0.1-0.2 should be ok
+    #learning rate alpha of 0.1-0.2, iterations >100 should be ok
     size , m = X.shape
-
     W1, b1, W2, b2 = init_params(size)
+
     for i in range(iterations):
         Z1, A1, Z2, A2 = forward_propagation(X, W1, b1, W2, b2)
         dW1, db1, dW2, db2 = backward_propagation(X, Y, A1, A2, W2, Z1, m)
@@ -101,7 +101,7 @@ def gradient_descent(X, Y, alpha, iterations):
         if (i+1) % int(iterations/10) == 0:
             print(f"Iteration: {i+1} / {iterations}")
             prediction = get_predictions(A2)
-            print(f'{get_accuracy(prediction, Y):.3%}')
+            print(f'{get_accuracy(prediction, Y):.2%}')
     return W1, b1, W2, b2
 
 def make_predictions(X, W1 ,b1, W2, b2):
@@ -110,8 +110,10 @@ def make_predictions(X, W1 ,b1, W2, b2):
     return predictions
 
 def show_prediction(index,X, Y, W1, b1, W2, b2):
+    #This will display the image and prediction for user verification
+    
     # None means it'll make a new column
-    # to meet needs of make_predictions
+    # to meet dimension needs of make_predictions
     vect_X = X[:, index,None]
     prediction = make_predictions(vect_X, W1, b1, W2, b2)
     label = Y[index]
@@ -127,11 +129,11 @@ def show_prediction(index,X, Y, W1, b1, W2, b2):
 
 ####MAIN####
 W1, b1, W2, b2 = gradient_descent(X_train, Y_train, 0.125, 300)
-with open("trained_params.pkl","wb") as dump_file:
-    pickle.dump((W1, b1, W2, b2),dump_file)
+with open("trained_params.pkl","wb") as param_dump:
+    pickle.dump((W1, b1, W2, b2),param_dump)
 
-with open("trained_params.pkl","rb") as dump_file:
-    W1, b1, W2, b2=pickle.load(dump_file)
+with open("trained_params.pkl","rb") as param_dump:
+    W1, b1, W2, b2=pickle.load(param_dump)
 show_prediction(0,X_test, Y_test, W1, b1, W2, b2)
 show_prediction(1,X_test, Y_test, W1, b1, W2, b2)
 show_prediction(2,X_test, Y_test, W1, b1, W2, b2)
