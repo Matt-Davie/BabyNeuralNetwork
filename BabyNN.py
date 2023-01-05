@@ -66,7 +66,7 @@ def backward_propagation(X, Y, A1, A2, W2, Z1, m):
     #weights transposed is to apply weights kind of in reverse to get the error of the first layer
     #using the derivative of our activation function
     dZ1 = W2.T.dot(dZ2)*derivative_ReLU(Z1) # 10, m
-    dW1 = 1/m * (dZ1.dot(X.T)) #10, 784
+    dW1 = 1/m * (dZ1.dot(X.T)) #10, 784       (784 is 28^2)
     db1 = 1/m * np.sum(dZ1,1) # 10, 1
 
     return dW1, db1, dW2, db2
