@@ -5,6 +5,8 @@ This will create a NN to identify the mnist handwriting dataset
 This dataset is a bunch of 28x28 px images of 0-9 characters 
 handwritten, with labels in the training set.
 
+MNIST: https://en.wikipedia.org/wiki/MNIST_database
+
 Included is a set for training and a set for testing models if you don't want to mess with keras because you are a purist.
 
 Will use "from keras.datasets import mnist", to make readin easier).
