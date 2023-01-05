@@ -130,9 +130,11 @@ def show_prediction(index,X, Y, W1, b1, W2, b2):
 
 ####MAIN####
 W1, b1, W2, b2 = gradient_descent(X_train, Y_train, 0.125, 300)
+#store output params
 with open("trained_params.pkl","wb") as param_dump:
     pickle.dump((W1, b1, W2, b2),param_dump)
 
+#use stored params
 with open("trained_params.pkl","rb") as param_dump:
     W1, b1, W2, b2=pickle.load(param_dump)
 show_prediction(0,X_test, Y_test, W1, b1, W2, b2)
