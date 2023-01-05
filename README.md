@@ -16,7 +16,7 @@ Can use pickle for data reading and numpy+matplotlib for the rest.
 Notes:
 
 Randomise starting factors to 0/pm0.5.
-Will need to mormalise all image values so max=1 instead of max=255.
+Will need to normalise all image values so max=1 instead of max=255.
 
 #To do: explanatory maths and layer/node flow, other functions: tanh, sigmoid etc with derivatives.
 
