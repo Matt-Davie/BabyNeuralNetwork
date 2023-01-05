@@ -121,7 +121,7 @@ def show_prediction(index,X, Y, W1, b1, W2, b2):
     print("Prediction: ", prediction)
     print("Label: ", label)
 
-    current_image = vect_X.reshape((x, y)) * 255
+    current_image = vect_X.reshape((X, Y)) * 255
 
     plt.gray()
     plt.imshow(current_image, interpolation='nearest')
