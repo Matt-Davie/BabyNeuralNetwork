@@ -58,6 +58,7 @@ def one_hot(Y):
     return one_hot_Y 
 
 def backward_propagation(X, Y, A1, A2, W2, Z1, m):
+    #again commented array/vector sizes
     one_hot_Y = one_hot(Y)
     dZ2 = 2*(A2 - one_hot_Y) #10,m
     dW2 = 1/m * (dZ2.dot(A1.T)) # 10 , 10
