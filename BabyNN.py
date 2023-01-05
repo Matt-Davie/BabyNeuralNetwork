@@ -126,7 +126,7 @@ def show_prediction(index,X, Y, W1, b1, W2, b2):
 
 
 ####MAIN####
-W1, b1, W2, b2 = gradient_descent(X_train, Y_train, 0.15, 200)
+W1, b1, W2, b2 = gradient_descent(X_train, Y_train, 0.125, 300)
 with open("trained_params.pkl","wb") as dump_file:
     pickle.dump((W1, b1, W2, b2),dump_file)
 
