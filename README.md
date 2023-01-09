@@ -23,3 +23,5 @@ Will need to normalise all image values so max=1 instead of max=255.
 #To do: explanatory maths and layer/node flow, other functions: tanh, sigmoid etc with derivatives.
 
 #randomise data order - might make a difference in training?
+
+User handling in the new version by Jason Auger.
