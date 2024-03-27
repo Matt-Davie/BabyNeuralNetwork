@@ -1,8 +1,5 @@
 import sys
 global verbose_output
-# import numpy as np
-# from matplotlib import pyplot as plt
-# from keras.datasets import mnist
 
 def init_params(size):
     '''

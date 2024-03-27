@@ -9,7 +9,7 @@ MNIST: https://en.wikipedia.org/wiki/MNIST_database
 
 Included is a set for training and a set for testing models if you don't want to mess with keras because you are a purist.
 
-Will use "from keras.datasets import mnist", to make readin easier).
+Will use "from keras.datasets import mnist", to make readin easier.
 
 Each image has has greyscale pixel colour in range 0-255 per pixel.
 
